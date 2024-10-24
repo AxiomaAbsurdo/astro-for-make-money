@@ -1,39 +1,24 @@
 ---
-const tabMessage = "Todo va a mejorar";
-const name = "Mati | Adry | Rami";
+import MainLayout from "../layouts/MainLayout.astro";
 let clock = "";
-import NavBar from "../components/NavBar.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{tabMessage}</title>
-  </head>
-  <body>
-    <h1>{name}</h1>
+<MainLayout title="Home Page">
+  <p>Momento actual: {new Date().toLocaleString()}</p>
+  <p id="current-time">Momento actual real: {clock}</p>
 
-    <NavBar />
-
-    <p>Momento actual: {new Date().toLocaleString()}</p>
-    <p id="current-time">Momento actual real: {clock}</p>
-
-    <script>
-      let seconds: number = new Date().getSeconds();
-      let minutes: number = new Date().getMinutes();
-      let hours: number = new Date().getHours();
-      let clock = `${hours}:${minutes}:${seconds}`;
-      setInterval(() => {
-        seconds = new Date().getSeconds();
-        minutes = new Date().getMinutes();
-        hours = new Date().getHours();
-        clock = `${hours}:${minutes}:${seconds}`;
-        document.getElementById("current-time")!.innerHTML = clock;
-      }, 1000);
+  <script>
+    let seconds: number = new Date().getSeconds();
+    let minutes: number = new Date().getMinutes();
+    let hours: number = new Date().getHours();
+    let clock = `${hours}:${minutes}:${seconds}`;
+    setInterval(() => {
+      seconds = new Date().getSeconds();
+      minutes = new Date().getMinutes();
+      hours = new Date().getHours();
+      clock = `${hours}:${minutes}:${seconds}`;
       document.getElementById("current-time")!.innerHTML = clock;
-    </script>
-  </body>
-</html>
+    }, 1000);
+    document.getElementById("current-time")!.innerHTML = clock;
+  </script>
+</MainLayout>

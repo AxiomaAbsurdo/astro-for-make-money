@@ -1,18 +1,8 @@
 ---
 import NavBar from "../components/NavBar.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Las cosas van a mejorar</title>
-  </head>
-  <body>
-    <h1>Contact Page</h1>
-
-    <NavBar />
-  </body>
-</html>
+<MainLayout title="Contact Form">
+  <h1>Contact Page</h1>
+</MainLayout>
