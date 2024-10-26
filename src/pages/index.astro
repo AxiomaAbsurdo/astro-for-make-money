@@ -4,21 +4,22 @@ let clock = "";
 ---
 
 <MainLayout title="Home Page">
+  <h3>Home Page</h3>
   <p>Momento actual: {new Date().toLocaleString()}</p>
   <p id="current-time">Momento actual real: {clock}</p>
-
-  <script>
-    let seconds: number = new Date().getSeconds();
-    let minutes: number = new Date().getMinutes();
-    let hours: number = new Date().getHours();
-    let clock = `${hours}:${minutes}:${seconds}`;
-    setInterval(() => {
-      seconds = new Date().getSeconds();
-      minutes = new Date().getMinutes();
-      hours = new Date().getHours();
-      clock = `${hours}:${minutes}:${seconds}`;
-      document.getElementById("current-time")!.innerHTML = clock;
-    }, 1000);
-    document.getElementById("current-time")!.innerHTML = clock;
-  </script>
 </MainLayout>
+
+<script>
+  let seconds: number = new Date().getSeconds();
+  let minutes: number = new Date().getMinutes();
+  let hours: number = new Date().getHours();
+  let clock = `${hours}:${minutes}:${seconds}`;
+  setInterval(() => {
+    seconds = new Date().getSeconds();
+    minutes = new Date().getMinutes();
+    hours = new Date().getHours();
+    clock = `${hours}:${minutes}:${seconds}`;
+    document.getElementById("current-time")!.innerHTML = clock;
+  }, 1000);
+  document.getElementById("current-time")!.innerHTML = clock;
+</script>

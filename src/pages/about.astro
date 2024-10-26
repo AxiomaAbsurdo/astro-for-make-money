@@ -1,18 +1,19 @@
 ---
-import NavBar from "../components/NavBar.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import CustomTitle from "../components/CustomTitle.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Las cosas van a mejorar</title>
-  </head>
-  <body>
-    <h1>About</h1>
+<MainLayout title="About Page">
+  <h3>About With LayOut</h3>
 
-    <NavBar />
-  </body>
-</html>
+  <CustomTitle title="Custom Title" />
+</MainLayout>
+
+<style is:global>
+  h3 {
+    color: red;
+  }
+  h2 {
+    color: blue;
+  }
+</style>
